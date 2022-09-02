@@ -11,6 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        _speed += 0.05f * Time.deltaTime;
+        _speed += 0.03f * Time.deltaTime;
     }
 }

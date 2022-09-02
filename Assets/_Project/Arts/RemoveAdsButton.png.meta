@@ -144,7 +144,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 24
+        y: 0
         width: 50
         height: 22
       alignment: 0
@@ -165,7 +165,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 50
-        y: 24
+        y: 0
         width: 50
         height: 22
       alignment: 0
@@ -186,7 +186,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 100
-        y: 24
+        y: 0
         width: 50
         height: 22
       alignment: 0
@@ -207,7 +207,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 150
-        y: 24
+        y: 0
         width: 50
         height: 22
       alignment: 0
@@ -228,7 +228,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 200
-        y: 24
+        y: 0
         width: 50
         height: 22
       alignment: 0
@@ -249,7 +249,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 250
-        y: 24
+        y: 0
         width: 50
         height: 22
       alignment: 0
@@ -270,7 +270,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 300
-        y: 24
+        y: 0
         width: 50
         height: 22
       alignment: 0
@@ -291,7 +291,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 350
-        y: 24
+        y: 0
         width: 50
         height: 22
       alignment: 0
@@ -319,21 +319,13 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       RemoveAdsButton_6: -1323945025
-      RemoveAdsButton_11: 1757825804
-      RemoveAdsButton_12: -882147311
       RemoveAdsButton_5: 1719661511
       RemoveAdsButton_7: -134862340
       RemoveAdsButton_4: 1743165294
       RemoveAdsButton_3: -883753388
-      RemoveAdsButton_9: 942271034
       RemoveAdsButton_1: 1825356385
-      RemoveAdsButton_10: -1529387160
-      RemoveAdsButton_15: -1765432231
-      RemoveAdsButton_14: -2013002047
-      RemoveAdsButton_13: -203957231
       RemoveAdsButton_0: 691889128
       RemoveAdsButton_2: 253476001
-      RemoveAdsButton_8: 1533486733
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
