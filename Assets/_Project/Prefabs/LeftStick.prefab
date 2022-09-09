@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206677293695193719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.7579, y: 0.083762445, z: 0}
+  m_LocalPosition: {x: -1.801, y: 0, z: 0}
   m_LocalScale: {x: 6.132511, y: 6.132511, z: 6.132511}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -122,12 +122,12 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 206677293695193719}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 6a1fbbe2d9c95964dbfbffb9d7e48503, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -147,6 +147,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animator: {fileID: 5614317984515172447}
+  _spriteRenderer: {fileID: 3807372751276348854}
+  _sprites:
+  - {fileID: 548366273, guid: 9e1896bf25b1a624baf1ed011e8c8ced, type: 3}
+  - {fileID: 1419705522, guid: 9e1896bf25b1a624baf1ed011e8c8ced, type: 3}
+  - {fileID: 567713842, guid: 9e1896bf25b1a624baf1ed011e8c8ced, type: 3}
+  - {fileID: -421440767, guid: 9e1896bf25b1a624baf1ed011e8c8ced, type: 3}
+  - {fileID: -1101759749, guid: 9e1896bf25b1a624baf1ed011e8c8ced, type: 3}
+  _testSprite: {fileID: -1101759749, guid: 9e1896bf25b1a624baf1ed011e8c8ced, type: 3}
 --- !u!50 &9159773060818752175
 Rigidbody2D:
   serializedVersion: 4
