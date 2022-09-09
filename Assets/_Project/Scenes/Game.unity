@@ -382,8 +382,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_LocalRotation: {x: -0.14490141, y: 0.00025862834, z: 0.0000378831, w: 0.9894461}
-  m_LocalPosition: {x: 0, y: -3.67, z: -10}
+  m_LocalRotation: {x: -0.14490154, y: 0.000017064303, z: 0.0000025073741, w: 0.9894461}
+  m_LocalPosition: {x: 0.0058, y: -3.67, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -878,8 +878,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785113754}
-  m_LocalRotation: {x: -0.14490141, y: 0.00025862834, z: 0.0000378831, w: 0.9894461}
-  m_LocalPosition: {x: 0, y: -3.67, z: -10}
+  m_LocalRotation: {x: -0.14490154, y: 0.000017064303, z: 0.0000025073741, w: 0.9894461}
+  m_LocalPosition: {x: 0.0058, y: -3.67, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2732,7 +2732,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fb3f273babcba4fb0efbc79582b1d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collectables: {fileID: 0}
+  _collectables:
+  - {fileID: 0}
 --- !u!61 &4314881890190697337
 BoxCollider2D:
   m_ObjectHideFlags: 0

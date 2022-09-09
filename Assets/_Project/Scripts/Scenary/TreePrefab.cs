@@ -46,7 +46,7 @@ public class TreePrefab : MonoBehaviour
     {
         int randomCollectable = Random.Range(0, 10);
         Debug.Log(randomCollectable);
-        if (randomCollectable >= 8)
+        if (randomCollectable >= 1)
         {
             int randomGroup = Random.Range(0, 10);
             if (randomGroup <= 4)
