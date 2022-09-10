@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -8,9 +9,9 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private float _scoreMultiplier;
 
-    private void Start()
+    void OnEnable()
     {
-        _gameData.Score = 0;
+        PlayerCollisions.OnDeath += OnPlayerDeath;
     }
 
     private void Update()
@@ -24,5 +25,14 @@ public class ScoreManager : MonoBehaviour
     {
         int tScore = (int)_gameData.Score;
         _scoreText.text = tScore.ToString();
+    }
+
+    private void OnPlayerDeath()
+    {
+        if (_gameData.Score > _gameData.Highscore)
+        {
+            _gameData.Highscore = _gameData.Score;
+        }
+        _gameData.LastScore = _gameData.Score;
     }
 }

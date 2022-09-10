@@ -45,7 +45,6 @@ public class TreePrefab : MonoBehaviour
     private void RandomInstantiate()
     {
         int randomCollectable = Random.Range(0, 10);
-        Debug.Log(randomCollectable);
         if (randomCollectable >= 1)
         {
             int randomGroup = Random.Range(0, 10);
