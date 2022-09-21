@@ -5,9 +5,7 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private Transform _levelPartStart;
     [SerializeField] private List<Transform> _levelPartList_1;
-    [SerializeField] private List<Transform> _levelPartList_2;
     [SerializeField] private GameObject _playerGameObject;
-    //[SerializeField] private PlayerCollisions _playerCollisions;
     //[SerializeField] private GameData _gameData;
 
     private Vector3 _playerPosition;

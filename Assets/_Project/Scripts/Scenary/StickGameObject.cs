@@ -7,7 +7,6 @@ public class StickGameObject : MonoBehaviour
 
     [SerializeField] private SpriteRenderer _spriteRenderer;
     [SerializeField] private List<Sprite> _sprites;
-    [SerializeField] private Sprite _testSprite;
 
     private int _spriteIndex;
 

@@ -294,10 +294,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1fb3f273babcba4fb0efbc79582b1d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _collectables:
-  - {fileID: 7167101300008227440}
-  - {fileID: 777066714741447307}
-  - {fileID: 3787543426427736087}
+  _collectables_1: {fileID: 7167101300008227440}
+  _collectables_2: {fileID: 777066714741447307}
+  _collectables_3: {fileID: 3787543426427736087}
 --- !u!1 &9166635553192339900
 GameObject:
   m_ObjectHideFlags: 0

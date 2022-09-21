@@ -2,15 +2,30 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [SerializeField] private GameData _gameData;
+
+    private void OnEnable()
+    {   
+        PlayerCollisions.OnDeath += SetLastPlayerSpeed;
+    }
+
+    private void OnDisable()
+    {
+        PlayerCollisions.OnDeath -= SetLastPlayerSpeed;
+    }
 
     void Update()
     {
-        transform.Translate(Vector2.up * Time.deltaTime * _speed);
+        transform.Translate(Vector2.up * Time.deltaTime * _gameData.PlayerSpeed);
     }
 
-    private void FixedUpdate() 
+    private void FixedUpdate()
     {
-        _speed += 0.045f * Time.deltaTime;
+        _gameData.PlayerSpeed += 0.045f * Time.deltaTime;
+    }
+
+    private void SetLastPlayerSpeed()
+    {
+        _gameData.LastPlayerSpeed = _gameData.PlayerSpeed;
     }
 }
