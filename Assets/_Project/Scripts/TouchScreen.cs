@@ -12,9 +12,8 @@ public class TouchScreen : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
-            if (touch.position.x < Screen.width / 2)
+            if (touch.position.x < Screen.width / 2 && Time.timeScale == 1)
             {
-                Debug.Log("Left click");
                 _playerGameObject.transform.position = _leftPoint.position;
 
                 if (_playerSpriteRenderer.flipX != true)
@@ -22,20 +21,19 @@ public class TouchScreen : MonoBehaviour
                     _playerSpriteRenderer.flipX = true;
                 }
             }
-            else if (touch.position.x > Screen.width / 2)
+            else if (touch.position.x > Screen.width / 2 && Time.timeScale == 1)
             {
-                Debug.Log("Right click");
                 _playerGameObject.transform.position = _rightPoint.position;
                 _playerSpriteRenderer.flipX = false;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && Time.timeScale == 1)
         {
             _playerGameObject.transform.position = _leftPoint.position;
             _playerSpriteRenderer.flipX = true;
         }
-        else if (Input.GetKeyDown(KeyCode.X))
+        else if (Input.GetKeyDown(KeyCode.X) && Time.timeScale == 1)
         {
             _playerGameObject.transform.position = _rightPoint.position;
             _playerSpriteRenderer.flipX = false;

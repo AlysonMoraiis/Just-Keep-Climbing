@@ -10,6 +10,7 @@ public class GameData : ScriptableObject
     public int InGameCoin;
     public float PlayerSpeed;
     public bool CanDamage;
+    public int DeathsCount;
 
     [Header("Revive Conditions")]
     public float LastPlayerSpeed;
@@ -19,4 +20,5 @@ public class GameData : ScriptableObject
 
     [Header("Others")]
     public bool SoundStats;
+    public bool HasPurchasedRemoveAds;
 }
