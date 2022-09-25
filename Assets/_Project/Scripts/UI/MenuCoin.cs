@@ -8,7 +8,7 @@ public class MenuCoin : MonoBehaviour
 
     void Start()
     {
-        int tCoin = (int)_gameData.MenuCoin;
+        int tCoin = (int)_gameData.Coins;
         _text.text = tCoin.ToString();
     }
 }

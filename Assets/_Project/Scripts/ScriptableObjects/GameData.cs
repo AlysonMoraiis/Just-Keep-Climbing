@@ -6,7 +6,7 @@ public class GameData : ScriptableObject
     [Header("Player")]
     public float Score;
     public float Highscore;
-    public int MenuCoin;
+    public int Coins;
     public int InGameCoin;
     public float PlayerSpeed;
     public bool CanDamage;

@@ -3,18 +3,12 @@ using DG.Tweening;
 
 public class ScaleText : MonoBehaviour
 {
-    [SerializeField] private RectTransform rectTransform;
-    [SerializeField] private Vector3 scaleTo;
-
+    [SerializeField] private RectTransform _rectTransform;
+    [SerializeField] private Vector3 _scaleTO;
+    [SerializeField] private float _scaleTime = 1f;
 
     void Start()
     {
-        rectTransform.DOScale(scaleTo, 1f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo).SetUpdate(true);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _rectTransform.DOScale(_scaleTO, _scaleTime).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo).SetUpdate(true);
     }
 }

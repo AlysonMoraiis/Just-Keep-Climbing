@@ -23,10 +23,10 @@ public class PurchaseSkinScreen : MonoBehaviour
 
     public void HandlePurchaseButton()
     {
-        if (_gameData.MenuCoin > _skinPrice)
+        if (_gameData.Coins > _skinPrice)
         {
             _skinData.SkinIndex = _skinIndex;
-            _gameData.MenuCoin -= _skinPrice;
+            _gameData.Coins -= _skinPrice;
             _skinData.SkinHasPurchased[_skinIndex] = true;
             _playerData.PlayerAnimatorController = _skinData.ActiveSkin[_skinData.SkinIndex];
             _scaleWindow.CloseWindowCall();

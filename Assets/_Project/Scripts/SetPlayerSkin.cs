@@ -5,10 +5,10 @@ using UnityEngine;
 public class SetPlayerSkin : MonoBehaviour
 {
     [SerializeField] private Animator _playerAnimator;
-    [SerializeField] private PlayerData _playerData;
+    [SerializeField] private SkinData _skinData;
 
     void Start()
     {
-        _playerAnimator.runtimeAnimatorController = _playerData.PlayerAnimatorController;
+        _playerAnimator.runtimeAnimatorController =  _skinData.ActiveSkin[_skinData.SkinIndex];
     }
 }

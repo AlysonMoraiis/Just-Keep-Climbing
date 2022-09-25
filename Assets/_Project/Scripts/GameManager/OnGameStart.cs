@@ -21,7 +21,6 @@ public class OnGameStart : MonoBehaviour
         {
             ResetGameStats();
         }
-        Time.timeScale = 1;
     }
 
     private void RestoreGameStats()
