@@ -40,6 +40,7 @@ public class CoinManager : MonoBehaviour, ISaveable
     {
         _gameData.LastCoin = _gameData.InGameCoin;
         _gameData.Coins += _gameData.InGameCoin;
+        CoinTextUpdate();
     }
 
     public object SaveState()

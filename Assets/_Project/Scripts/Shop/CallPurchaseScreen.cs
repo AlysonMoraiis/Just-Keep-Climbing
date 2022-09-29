@@ -6,54 +6,20 @@ using UnityEngine.UI;
 public class CallPurchaseScreen : MonoBehaviour
 {
     [SerializeField] private SkinData _skinData;
-    [SerializeField] private GameData _gameData;
-    [SerializeField] private PlayerData _playerData;
-    [SerializeField] private RuntimeAnimatorController _skinAnimator;
     [SerializeField] private ScaleWindow _scaleWindow;
     [SerializeField] private PurchaseSkinScreen _purchaseSkinScreen;
-    [SerializeField] private GameObject _available;
-    [SerializeField] private GameObject _purchased;
-    [SerializeField] private Button _skinButton;
+    [SerializeField] private SkinSelect _skinSelect;
 
-    [SerializeField] private int _skinIndex;
-    [SerializeField] private int _skinPrice;
-
-    private void OnEnable()
-    {
-        CheckIfHasPurchased();
-    }
-
-    private void CheckIfHasPurchased()
-    {
-        _skinButton.interactable = true;
-        if (_skinData.SkinHasPurchased[_skinIndex] == true)
-        {
-            _available.SetActive(false);
-            _purchased.SetActive(true);
-        }
-        else
-        {
-            _available.SetActive(true);
-            _purchased.SetActive(false);
-        }
-
-        if (_skinData.SkinIndex == _skinIndex)
-        {
-            _skinButton.interactable = false;
-        }
-    }
 
     public void HandleSkinButton()
     {
-        if (_skinData.SkinHasPurchased[_skinIndex])
+        if (_skinData.HasPurchased)
         {
-            _skinData.SkinIndex = _skinIndex;
-            _playerData.PlayerAnimatorController = _skinData.ActiveSkin[_skinData.SkinIndex];
-            CheckIfHasPurchased();
+            _skinSelect.SetPlayerSelected(_skinData.SkinIndex);
+            SaveLoadSystem.Instance.Save();
             return;
         }
-        _purchaseSkinScreen.UpdateEdgeInfo(_skinPrice, _skinIndex);
+        _purchaseSkinScreen.UpdateEdgeInfo(_skinData);
         _scaleWindow.OpenWindow();
-        CheckIfHasPurchased();
     }
 }

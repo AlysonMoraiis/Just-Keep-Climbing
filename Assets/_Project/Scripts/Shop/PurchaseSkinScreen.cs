@@ -2,34 +2,64 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
-public class PurchaseSkinScreen : MonoBehaviour
+public class PurchaseSkinScreen : MonoBehaviour, ISaveable
 {
     [SerializeField] private TMP_Text _priceText;
     [SerializeField] private GameData _gameData;
     [SerializeField] private SkinData _skinData;
-    [SerializeField] private PlayerData _playerData;
+    [SerializeField] private MenuManager _menuManager;
     [SerializeField] private ScaleWindow _scaleWindow;
+    [SerializeField] private SkinSelect _skinSelect;
 
-    private int _skinPrice;
-    private int _skinIndex;
+    public event Action OnPurchase;
 
-    public void UpdateEdgeInfo(int skinPrice, int skinIndex)
+    public void UpdateEdgeInfo(SkinData skins)
     {
-        _skinPrice = skinPrice;
-        _skinIndex = skinIndex;
-        _priceText.text = _skinPrice.ToString();
+        _skinData = skins;
+        _priceText.text = skins.SkinPrice.ToString();
     }
 
     public void HandlePurchaseButton()
     {
-        if (_gameData.Coins > _skinPrice)
+        if (_gameData.Coins > _skinData.SkinPrice)
         {
-            _skinData.SkinIndex = _skinIndex;
-            _gameData.Coins -= _skinPrice;
-            _skinData.SkinHasPurchased[_skinIndex] = true;
-            _playerData.PlayerAnimatorController = _skinData.ActiveSkin[_skinData.SkinIndex];
+            _gameData.Coins -= _skinData.SkinPrice;
+            _skinData.HasPurchased = true;
+            _skinSelect.SetPlayerSelected(_skinData.SkinIndex);
+            _menuManager.TextUpdate();
+            SaveLoadSystem.Instance.Save();
             _scaleWindow.CloseWindowCall();
+            OnPurchase?.Invoke();
         }
+        else
+        {
+            Debug.Log("Buy more apples popup");
+        }
+        SaveLoadSystem.Instance.Save();
+    }
+
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            index = this._skinData.SkinIndex,
+            coins = this._gameData.Coins
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        _skinData.SkinIndex = saveData.index;
+        _gameData.Coins = saveData.coins;
+    }
+
+    [Serializable]
+    private struct SaveData
+    {
+        public int index;
+        public int coins;
     }
 }
