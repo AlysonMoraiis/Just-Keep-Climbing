@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using System;
 
-public class PurchaseSkinScreen : MonoBehaviour, ISaveable
+public class PurchaseSkinScreen : MonoBehaviour
 {
     [SerializeField] private TMP_Text _priceText;
     [SerializeField] private GameData _gameData;
@@ -29,7 +29,6 @@ public class PurchaseSkinScreen : MonoBehaviour, ISaveable
             _skinData.HasPurchased = true;
             _skinSelect.SetPlayerSelected(_skinData.SkinIndex);
             _menuManager.TextUpdate();
-            SaveLoadSystem.Instance.Save();
             _scaleWindow.CloseWindowCall();
             OnPurchase?.Invoke();
         }
@@ -37,29 +36,5 @@ public class PurchaseSkinScreen : MonoBehaviour, ISaveable
         {
             Debug.Log("Buy more apples popup");
         }
-        SaveLoadSystem.Instance.Save();
-    }
-
-    public object SaveState()
-    {
-        return new SaveData()
-        {
-            index = this._skinData.SkinIndex,
-            coins = this._gameData.Coins
-        };
-    }
-
-    public void LoadState(object state)
-    {
-        var saveData = (SaveData)state;
-        _skinData.SkinIndex = saveData.index;
-        _gameData.Coins = saveData.coins;
-    }
-
-    [Serializable]
-    private struct SaveData
-    {
-        public int index;
-        public int coins;
     }
 }

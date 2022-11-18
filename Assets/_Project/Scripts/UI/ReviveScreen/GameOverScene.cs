@@ -29,13 +29,11 @@ public class GameOverScene : MonoBehaviour
     public void HandleRestartButton()
     {
         _gameData.Revived = false;
-        SaveLoadSystem.Instance.Save();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void HandleMenuButton()
     {
-        SaveLoadSystem.Instance.Save();
         SceneManager.LoadScene("Menu");
     }
 

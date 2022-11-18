@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class SkinSelect : MonoBehaviour, ISaveable
+public class SkinSelect : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
@@ -22,28 +22,6 @@ public class SkinSelect : MonoBehaviour, ISaveable
         _index = index;
         spriteRenderer.sprite = playerRenderer[index];
         animator.runtimeAnimatorController = playerController[index];
-        SaveLoadSystem.Instance.Save();
         OnEquip?.Invoke();
-    }
-
-    public object SaveState()
-    {
-        Debug.Log("Save index: " + _index);
-        return new SaveData()
-        {
-            index = this._index
-        };
-    }
-
-    public void LoadState(object state)
-    {
-        var saveData = (SaveData)state;
-        _index = saveData.index;
-    }
-
-    [Serializable]
-    private struct SaveData
-    {
-        public int index;
     }
 }

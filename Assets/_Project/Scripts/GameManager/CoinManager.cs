@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class CoinManager : MonoBehaviour, ISaveable
+public class CoinManager : MonoBehaviour
 {
     [SerializeField] private GameData _gameData;
     [SerializeField] private TMPro.TMP_Text _text;
@@ -41,27 +41,5 @@ public class CoinManager : MonoBehaviour, ISaveable
         _gameData.LastCoin = _gameData.InGameCoin;
         _gameData.Coins += _gameData.InGameCoin;
         CoinTextUpdate();
-    }
-
-    public object SaveState()
-    {
-        Debug.Log("Save coins: " + _gameData.Coins);
-        return new SaveData()
-        {
-            coins = this._gameData.Coins
-        };
-    }
-
-    public void LoadState(object state)
-    {
-       var saveData = (SaveData)state;
-       _gameData.Coins = saveData.coins;
-        Debug.Log("Load coins: " + _gameData.Coins);
-    }
-
-    [Serializable]
-    private struct SaveData
-    {
-        public int coins;
     }
 }

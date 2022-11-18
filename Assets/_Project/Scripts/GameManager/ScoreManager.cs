@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-public class ScoreManager : MonoBehaviour, ISaveable
+public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private GameData _gameData;
     [SerializeField] private TMP_Text _scoreText;
@@ -34,27 +34,5 @@ public class ScoreManager : MonoBehaviour, ISaveable
             _gameData.Highscore = _gameData.Score;
         }
         _gameData.LastScore = _gameData.Score;
-    }
-
-    public object SaveState()
-    {
-        Debug.Log("Save highscore: " + _gameData.Highscore);
-        return new SaveData()
-        {
-            highscore = this._gameData.Highscore
-        };
-    }
-
-    public void LoadState(object state)
-    {
-       var saveData = (SaveData)state;
-       _gameData.Highscore = saveData.highscore;
-        Debug.Log("Load highscore: " + _gameData.Highscore);
-    }
-
-    [Serializable]
-    private struct SaveData
-    {
-        public float highscore;
     }
 }
