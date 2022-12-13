@@ -12,6 +12,7 @@ public class PurchaseSkinScreen : MonoBehaviour
     [SerializeField] private MenuManager _menuManager;
     [SerializeField] private ScaleWindow _scaleWindow;
     [SerializeField] private SkinSelect _skinSelect;
+    [SerializeField] private AudioClip _effectSound;
 
     public event Action OnPurchase;
 
@@ -34,7 +35,7 @@ public class PurchaseSkinScreen : MonoBehaviour
         }
         else
         {
-            Debug.Log("Buy more apples popup");
+            SoundManager.Instance.PlaySound(_effectSound);
         }
     }
 }
