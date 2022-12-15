@@ -39,6 +39,7 @@ public class SetSkinInSlot : MonoBehaviour
     public void Refresh()
     {
         _skinSelectButton.interactable = true;
+        _skinSelect._index = PlayerPrefs.GetInt("skinIndex");
         SetSkin();
         if (_hasPurchased)
         {
@@ -52,7 +53,8 @@ public class SetSkinInSlot : MonoBehaviour
     {
         _skinImage.sprite = _skins.SkinImage;
         _skinPrice.text = _skins.SkinPrice.ToString();
-        _hasPurchased = _skins.HasPurchased;
+
+        _hasPurchased = (PlayerPrefs.GetInt(_skins.SkinName) != 0);
         if (_skinIndex == _skinSelect._index)
         {
             _skinSelectButton.interactable = false;

@@ -15,4 +15,5 @@ MonoBehaviour:
   SkinImage: {fileID: 21300000, guid: a387326e8ed72264f91b993aca069ccc, type: 3}
   SkinPrice: 350
   SkinIndex: 3
+  SkinName: skin03
   HasPurchased: 0

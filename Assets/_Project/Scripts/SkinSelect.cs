@@ -14,6 +14,7 @@ public class SkinSelect : MonoBehaviour
 
     private void Start()
     {
+        _index = PlayerPrefs.GetInt("skinIndex");
         SetPlayerSelected(_index);
     }
 

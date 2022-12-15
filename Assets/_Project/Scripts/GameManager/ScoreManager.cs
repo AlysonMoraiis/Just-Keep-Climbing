@@ -32,6 +32,7 @@ public class ScoreManager : MonoBehaviour
         if (_gameData.Score > _gameData.Highscore)
         {
             _gameData.Highscore = _gameData.Score;
+            PlayerPrefs.SetFloat("highscore", _gameData.Highscore);
         }
         _gameData.LastScore = _gameData.Score;
     }

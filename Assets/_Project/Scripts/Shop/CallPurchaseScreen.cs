@@ -16,6 +16,7 @@ public class CallPurchaseScreen : MonoBehaviour
         if (_skinData.HasPurchased)
         {
             _skinSelect.SetPlayerSelected(_skinData.SkinIndex);
+            PlayerPrefs.SetInt("skinIndex", _skinData.SkinIndex);
             return;
         }
         _purchaseSkinScreen.UpdateEdgeInfo(_skinData);

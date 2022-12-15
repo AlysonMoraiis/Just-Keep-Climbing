@@ -11,6 +11,7 @@ public class CoinManager : MonoBehaviour
     private void Start()
     {
         CoinTextUpdate();
+        _gameData.Coins = PlayerPrefs.GetInt("coins");
     }
 
     private void OnEnable()
@@ -40,6 +41,7 @@ public class CoinManager : MonoBehaviour
     {
         _gameData.LastCoin = _gameData.InGameCoin;
         _gameData.Coins += _gameData.InGameCoin;
+        PlayerPrefs.SetInt("coins", _gameData.Coins);
         CoinTextUpdate();
     }
 }

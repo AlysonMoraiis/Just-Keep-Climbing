@@ -27,8 +27,11 @@ public class PurchaseSkinScreen : MonoBehaviour
         if (_gameData.Coins > _skinData.SkinPrice)
         {
             _gameData.Coins -= _skinData.SkinPrice;
+            PlayerPrefs.SetInt("coins", _gameData.Coins);
             _skinData.HasPurchased = true;
+            PlayerPrefs.SetInt(_skinData.SkinName , (_skinData.HasPurchased ? 1 : 0));
             _skinSelect.SetPlayerSelected(_skinData.SkinIndex);
+            PlayerPrefs.SetInt("skinIndex", _skinData.SkinIndex);
             _menuManager.TextUpdate();
             _scaleWindow.CloseWindowCall();
             OnPurchase?.Invoke();
