@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0eff67bdb1f2284e8ab4eaefb8ad9c8, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  Score: 8.776421
-  Highscore: 8.773829
-  Coins: 6930
+  Score: 0.011401532
+  Highscore: 9.725975
+  Coins: 434706
   InGameCoin: 0
-  PlayerSpeed: 3.1917064
+  PlayerSpeed: 3
   CanDamage: 1
   DeathsCount: 0
-  LastPlayerSpeed: 3.1917064
-  LastScore: 8.773829
+  LastPlayerSpeed: 3.1431048
+  LastScore: 6.509776
   LastCoin: 0
   Revived: 0
   SoundStats: 1

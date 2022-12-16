@@ -43,7 +43,6 @@ public class SetSkinInSlot : MonoBehaviour
         SetSkin();
         if (_hasPurchased)
         {
-            Debug.Log("Comprou?" + _hasPurchased);
             _availableSkin.SetActive(false);
             _purchasedSkin.SetActive(true);
         }

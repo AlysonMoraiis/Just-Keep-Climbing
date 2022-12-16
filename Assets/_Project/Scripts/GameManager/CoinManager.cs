@@ -41,7 +41,11 @@ public class CoinManager : MonoBehaviour
     {
         _gameData.LastCoin = _gameData.InGameCoin;
         _gameData.Coins += _gameData.InGameCoin;
-        PlayerPrefs.SetInt("coins", _gameData.Coins);
         CoinTextUpdate();
+    }
+
+    public void SaveCoins()
+    {
+        PlayerPrefs.SetInt("coins", _gameData.Coins);
     }
 }
