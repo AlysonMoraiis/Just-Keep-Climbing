@@ -16,4 +16,4 @@ MonoBehaviour:
   SkinPrice: 0
   SkinIndex: 0
   SkinName: skin0
-  HasPurchased: 0
+  HasPurchased: 1

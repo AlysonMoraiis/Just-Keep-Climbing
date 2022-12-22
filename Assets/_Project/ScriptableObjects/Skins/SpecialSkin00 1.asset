@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d742741065a16bc4594df2289c4b243b, type: 3}
-  m_Name: Skin01
+  m_Name: SpecialSkin00 1
   m_EditorClassIdentifier: 
-  SkinImage: {fileID: 21300000, guid: 25b09a569f382c8459894bc373c553a0, type: 3}
-  SkinPrice: 300
-  SkinIndex: 1
-  SkinName: skin01
-  HasPurchased: 0
+  SkinImage: {fileID: 21300000, guid: eaebc70270f77704dbf69d901f396df7, type: 3}
+  SkinPrice: 1
+  SkinIndex: 6
+  SkinName: specialskin01
+  HasPurchased: 1

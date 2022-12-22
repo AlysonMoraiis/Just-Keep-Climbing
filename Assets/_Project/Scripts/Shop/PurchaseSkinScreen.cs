@@ -24,7 +24,7 @@ public class PurchaseSkinScreen : MonoBehaviour
 
     public void HandlePurchaseButton()
     {
-        if (_gameData.Coins > _skinData.SkinPrice)
+        if (_gameData.Coins >= _skinData.SkinPrice)
         {
             _gameData.Coins -= _skinData.SkinPrice;
             PlayerPrefs.SetInt("coins", _gameData.Coins);

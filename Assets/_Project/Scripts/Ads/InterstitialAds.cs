@@ -35,7 +35,7 @@ public class InterstitialAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSh
         if (_gameData.HasPurchasedRemoveAds == false)
         {
             _gameData.DeathsCount += 1;
-            if (_gameData.DeathsCount >= 4)
+            if (_gameData.DeathsCount >= 5)
             {
                 _gameData.DeathsCount = 0;
                 StartCoroutine(ShowAd());
